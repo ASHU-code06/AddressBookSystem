@@ -1,9 +1,6 @@
 package com.bridgelabz;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 class Contacts {
 
     ArrayList<ContactModel> contactList = new ArrayList<ContactModel>();
@@ -126,9 +123,13 @@ class Contacts {
                     break;
                 default:
                     System.out.println("Invalid Option!, try Again");
-                    break;
+            }   break;
             }
         }
+    public void DeleteContact(String name) {
+        int contactIndex = getContactIndex(name);
+        contactList.remove(contactIndex);
     }
     }
+
 
