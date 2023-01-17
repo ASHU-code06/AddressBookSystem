@@ -1,8 +1,8 @@
 package com.bridgelabz;
-
 public class ContactModel {
     public int contactId;
-     public String firstname;
+    public int addressBookId;
+    public String firstname;
     public String lastname;
     public String address;
     public String city;

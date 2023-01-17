@@ -1,52 +1,55 @@
 package com.bridgelabz;
 import java.util.ArrayList;
 import java.util.Scanner;
-class Contacts {
+class Contact {
 
-    ArrayList<ContactModel> contactList = new ArrayList<ContactModel>();
-    public int contactId;
-    public void addContact(){//Method for cresting contacts only
+    static ArrayList<ContactModel> contactList = new ArrayList<ContactModel>();
+
+    public void AddContact(int addressBookId) {
         ContactModel contactModel = new ContactModel();
+        contactModel.addressBookId = addressBookId;
         System.out.println("Enter your details as follows ");
-        Scanner myinput = new Scanner(System.in);
-
+        Scanner userInput = new Scanner(System.in);
         System.out.println("Enter first  name ");
-        contactModel.firstname = myinput.nextLine();
+        contactModel.firstname = userInput.nextLine();
 
-        System.out.println("Now enter last name ");
-        contactModel.lastname = myinput.nextLine();
+        System.out.println("Enter last name ");
+        contactModel.lastname = userInput.nextLine();
 
         System.out.println("Enter your address ");
-        contactModel.address = myinput.nextLine();
+        contactModel.address = userInput.nextLine();
 
         System.out.println("Enter city ");
-        contactModel.city = myinput.nextLine();
+        contactModel.city = userInput.nextLine();
 
         System.out.println("Enter state ");
-        contactModel.state = myinput.nextLine();
+        contactModel.state = userInput.nextLine();
 
         System.out.println("Enter ZIP  ");
-        contactModel.zip = myinput.nextLine();
+        contactModel.zip = userInput.nextLine();
 
         System.out.println("Enter Phone Number ");
-        contactModel.phoneNumber = myinput.nextLine();
+        contactModel.phoneNumber = userInput.nextLine();
 
         System.out.println("Enter E-mail ");
-        contactModel.email = myinput.nextLine();
-        
+        contactModel.email = userInput.nextLine();
         contactList.add(contactModel);
     }
-    public void displayContactList(){
-        contactList.forEach((contact)->{
-            System.out.println("Name :  "+contact.firstname+" "+contact.lastname);
-            System.out.println("Address :  "+contact.address);
-            System.out.println("City :  "+contact.city);
-            System.out.println("State :  "+contact.state);
-            System.out.println("ZIP :  "+contact.zip);
-            System.out.println("Phone no :  "+contact.phoneNumber);
-            System.out.println("Email  :  "+contact.email);
+
+    public void DisplayContactList(int addressBookId) {
+        contactList.forEach((contact) -> {
+            System.out.println("Name :  " + contact.firstname + " " + contact.lastname);
+            System.out.println("Address :  " + contact.address);
+            System.out.println("City :  " + contact.city);
+            System.out.println("State :  " + contact.state);
+            System.out.println("ZIP :  " + contact.zip);
+            System.out.println("Phone no :  " + contact.phoneNumber);
+            System.out.println("Email  :  " + contact.email);
+            System.out.println("-------------------------------------");
+            System.out.println("");
         });
     }
+
     private int getContactIndex(String name) {
         for (int i = 0; i < contactList.size(); i++) {
             if (contactList.get(i).firstname.equals(name)) {
@@ -123,13 +126,13 @@ class Contacts {
                     break;
                 default:
                     System.out.println("Invalid Option!, try Again");
-            }   break;
+                    break;
             }
         }
+    }
+
     public void DeleteContact(String name) {
         int contactIndex = getContactIndex(name);
         contactList.remove(contactIndex);
     }
-    }
-
-
+}
