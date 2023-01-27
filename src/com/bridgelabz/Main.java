@@ -1,10 +1,9 @@
+package com.bridgelabz;
+import com.bridgelabz.AddressBook;
+import com.bridgelabz.Contact;
 import java.util.Scanner;
-
-import services.AddressBook;
-import services.Contact;
-
 class Main {
-    Contact contact = new Contact();
+    Contact contact =  new Contact();
 
     public static void main(String args[]) {
         Main objMain = new Main();
@@ -18,8 +17,8 @@ class Main {
         System.out.println("Press 2 Select Address");
 
         AddressBook addressBook = new AddressBook();
-        try (Scanner scanner = new Scanner(System.in)) {
-            int choice = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in) ;
+        int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
@@ -37,11 +36,11 @@ class Main {
                 default:
                     System.out.println("Invalid Option, try again!");
             }
-        }
+
     }
 
     private void EditAddressBook(int addressBookId) {
-        try {
+
             System.out.println("Press 1 for ADD CONTACT ");
             System.out.println("Press 2 for EDIT CONTACT ");
             System.out.println("Press 3 for DELETE CONTACT ");
@@ -68,9 +67,8 @@ class Main {
                     break;
                 default:
                     System.out.println("INVALID");
+                    break;
             }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+
     }
 }

@@ -1,7 +1,7 @@
 package com.bridgelabz;
 import java.util.ArrayList;
 import java.util.Scanner;
-class Contact {
+public class Contact {
 
     static ArrayList<ContactModel> contactList = new ArrayList<ContactModel>();
 

@@ -5,7 +5,7 @@ public class AddressBook {
     public static ArrayList<AddressBookModel> addressBookList = new ArrayList<AddressBookModel>();
 
     public void CreateAddressBook() {
-        try (Scanner scanner = new Scanner(System.in)) {
+             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter Address Book Name");
             String addressBookName = scanner.nextLine();
 
@@ -17,18 +17,17 @@ public class AddressBook {
 
                 AddressBookModel addressBook = new AddressBookModel();
                 addressBookId++;
+
                 addressBook.id = addressBookId;
                 addressBook.name = addressBookName;
                 addressBook.description = description;
                 addressBookList.add(addressBook);
 
-                System.out.println("Address Book Added!");
-            }
-
+                System.out.println("Address Book Added!");}
             else {
-                System.out.println("Address Already Exists with Name");
-            }
-        }
+                    System.out.println("Address Already Exists with Name");
+                }
+
     }
 
     public int GetAddressBookId(String name) {
